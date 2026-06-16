@@ -5,12 +5,23 @@ import { Icon } from "@iconify/react";
 import ChromaiLogo from "@/app/components/ChromaiLogo";
 import { useI18n } from "@/lib/i18n/provider";
 
-const GITHUB_URL = "https://github.com/musayazlik/chromai";
-
 const SOCIALS = [
-  { icon: "lucide:github", label: "GitHub", href: GITHUB_URL },
-  { icon: "lucide:twitter", label: "X", href: "https://x.com" },
-  { icon: "lucide:linkedin", label: "LinkedIn", href: "https://linkedin.com" },
+  {
+    icon: "lucide:github",
+    label: "GitHub",
+    href: "https://github.com/musayazlik",
+  },
+  {
+    icon: "lucide:linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/musayazlik/",
+  },
+  {
+    icon: "lucide:instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/musa_yazlik/",
+  },
+  { icon: "lucide:briefcase", label: "Bionluk", href: "https://bionluk.com/" },
 ];
 
 function isExternal(href: string) {
@@ -43,7 +54,7 @@ export function SiteFooter() {
     {
       title: t.footer.colCommunity,
       links: [
-        { label: "GitHub", href: GITHUB_URL },
+        { label: "GitHub", href: "https://github.com/musayazlik/chromai" },
         { label: "Next.js", href: "https://nextjs.org" },
         { label: "Tailwind CSS", href: "https://tailwindcss.com" },
       ],

@@ -132,7 +132,7 @@ const tr: Messages = {
     linkPalettes: "Paletler",
     linkModels: "AI Modelleri",
     rights: (year) => `© ${year} Chromai. Tüm hakları saklıdır.`,
-    credit: "OpenRouter ile yapay zekâ destekli",
+    credit: "Codelify & Musa Yazlık tarafından yapıldı",
   },
   library: [
     {
@@ -297,7 +297,7 @@ const en: Messages = {
     linkPalettes: "Palettes",
     linkModels: "AI Models",
     rights: (year) => `© ${year} Chromai. All rights reserved.`,
-    credit: "AI-powered by OpenRouter",
+    credit: "Built by Codelify & Musa Yazlık",
   },
   library: [
     {
@@ -462,7 +462,7 @@ const de: Messages = {
     linkPalettes: "Paletten",
     linkModels: "KI-Modelle",
     rights: (year) => `© ${year} Chromai. Alle Rechte vorbehalten.`,
-    credit: "KI-gestützt von OpenRouter",
+    credit: "Erstellt von Codelify & Musa Yazlık",
   },
   library: [
     {

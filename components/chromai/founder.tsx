@@ -7,12 +7,23 @@ import { Icon } from "@iconify/react";
 import { useHome } from "@/lib/i18n/home";
 import { SectionHeading } from "./section-heading";
 
-const GITHUB_URL = "https://github.com/musayazlik/chromai";
-
 const SOCIALS = [
-  { icon: "lucide:github", label: "GitHub", href: GITHUB_URL },
-  { icon: "lucide:twitter", label: "X", href: "https://x.com" },
-  { icon: "lucide:linkedin", label: "LinkedIn", href: "https://linkedin.com" },
+  {
+    icon: "lucide:github",
+    label: "GitHub",
+    href: "https://github.com/musayazlik",
+  },
+  {
+    icon: "lucide:linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/musayazlik/",
+  },
+  {
+    icon: "lucide:instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/musa_yazlik/",
+  },
+  { icon: "lucide:briefcase", label: "Bionluk", href: "https://bionluk.com/" },
 ];
 
 export function Founder() {
