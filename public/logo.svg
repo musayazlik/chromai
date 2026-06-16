@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Chromai logo">
+  <defs>
+
+    <!-- Outer ring gradient: full spectrum -->
+    <linearGradient id="g-outer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="33%"  stop-color="#8b5cf6"/>
+      <stop offset="66%"  stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+
+    <!-- Inner ring gradient -->
+    <linearGradient id="g-inner" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#2dd4bf"/>
+      <stop offset="50%"  stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+
+    <!-- Core glow gradient -->
+    <radialGradient id="g-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#fff"     stop-opacity="1"/>
+      <stop offset="35%"  stop-color="#c4b5fd"  stop-opacity="0.95"/>
+      <stop offset="70%"  stop-color="#8b5cf6"  stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#6366f1"  stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ambient glow behind everything -->
+    <radialGradient id="g-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#8b5cf6" stop-opacity="0.28"/>
+      <stop offset="60%"  stop-color="#6366f1" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Clip paths for ring arcs -->
+    <clipPath id="clip-outer">
+      <circle cx="100" cy="100" r="78"/>
+    </clipPath>
+    <clipPath id="clip-inner">
+      <circle cx="100" cy="100" r="55"/>
+    </clipPath>
+
+    <!-- Soft glow filter -->
+    <filter id="f-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Stronger glow for core -->
+    <filter id="f-core-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Drop shadow -->
+    <filter id="f-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6366f1" flood-opacity="0.35"/>
+    </filter>
+
+  </defs>
+
+  <!-- ─── Ambient background glow ─── -->
+  <circle cx="100" cy="100" r="90" fill="url(#g-glow)"/>
+
+  <!-- ─── OUTER RING (rotates clockwise) ─── -->
+  <g filter="url(#f-glow)">
+    <g id="ring-outer">
+      <!-- Full circle stroke -->
+      <circle cx="100" cy="100" r="70"
+              fill="none"
+              stroke="url(#g-outer)"
+              stroke-width="12"
+              stroke-linecap="round"
+              stroke-dasharray="330 110"
+              stroke-dashoffset="0"
+              opacity="0.95"/>
+      <!-- Second arc, offset for layered look -->
+      <circle cx="100" cy="100" r="70"
+              fill="none"
+              stroke="url(#g-outer)"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-dasharray="80 350"
+              stroke-dashoffset="-170"
+              opacity="0.55"/>
+    </g>
+    <animateTransform
+      xlink:href="#ring-outer"
+      attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="360 100 100"
+      dur="7s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- ─── INNER RING (rotates counter-clockwise) ─── -->
+  <g filter="url(#f-glow)">
+    <g id="ring-inner">
+      <circle cx="100" cy="100" r="50"
+              fill="none"
+              stroke="url(#g-inner)"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-dasharray="220 94"
+              stroke-dashoffset="0"
+              opacity="0.95"/>
+      <!-- Thin accent arc -->
+      <circle cx="100" cy="100" r="50"
+              fill="none"
+              stroke="url(#g-inner)"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-dasharray="55 259"
+              stroke-dashoffset="-130"
+              opacity="0.5"/>
+    </g>
+    <animateTransform
+      xlink:href="#ring-inner"
+      attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="-360 100 100"
+      dur="5s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- ─── ORBIT DOTS (outer ring) ─── -->
+  <g id="dot-outer-group">
+    <circle id="dot-outer-1" cx="170" cy="100" r="5" fill="#ec4899" opacity="0.9" filter="url(#f-glow)"/>
+    <animateTransform
+      xlink:href="#dot-outer-group"
+      attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="360 100 100"
+      dur="7s"
+      repeatCount="indefinite"/>
+  </g>
+  <g id="dot-outer-group2">
+    <circle cx="170" cy="100" r="3" fill="#fb923c" opacity="0.7" filter="url(#f-glow)"/>
+    <animateTransform
+      xlink:href="#dot-outer-group2"
+      attributeName="transform"
+      type="rotate"
+      from="180 100 100"
+      to="540 100 100"
+      dur="7s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- ─── ORBIT DOTS (inner ring) ─── -->
+  <g id="dot-inner-group">
+    <circle cx="150" cy="100" r="4" fill="#2dd4bf" opacity="0.9" filter="url(#f-glow)"/>
+    <animateTransform
+      xlink:href="#dot-inner-group"
+      attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="-360 100 100"
+      dur="5s"
+      repeatCount="indefinite"/>
+  </g>
+  <g id="dot-inner-group2">
+    <circle cx="150" cy="100" r="2.5" fill="#6366f1" opacity="0.75" filter="url(#f-glow)"/>
+    <animateTransform
+      xlink:href="#dot-inner-group2"
+      attributeName="transform"
+      type="rotate"
+      from="-120 100 100"
+      to="-480 100 100"
+      dur="5s"
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- ─── CORE (pulsing) ─── -->
+  <g id="core-group" filter="url(#f-core-glow)">
+    <!-- Outer pulse ring -->
+    <circle cx="100" cy="100" r="22" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4">
+      <animate attributeName="r"        values="22;30;22"     dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"  values="0.4;0;0.4"    dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Middle glow -->
+    <circle cx="100" cy="100" r="18" fill="#8b5cf6" opacity="0.25">
+      <animate attributeName="r"        values="18;24;18"     dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"  values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Solid core -->
+    <circle cx="100" cy="100" r="16" fill="url(#g-core)">
+      <animate attributeName="r" values="16;17.5;16" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Inner bright spot -->
+    <circle cx="97" cy="97" r="5" fill="white" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+</svg>
