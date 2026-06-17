@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 
 import { Textarea } from "@/components/ui/textarea";
@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n/provider";
 import type { AIModel } from "@/lib/models";
 import { ModelSelect } from "./model-select";
+import { ApiKeyDialog } from "./api-key-dialog";
 
 export function Composer({
   prompt,
@@ -29,6 +30,7 @@ export function Composer({
   const { t } = useI18n();
   const composerRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [hasApiKey, setHasApiKey] = useState(false);
 
   // re-trigger the shake animation whenever shakeKey changes (empty submit)
   useEffect(() => {
@@ -46,7 +48,7 @@ export function Composer({
     const ta = textareaRef.current;
     if (!ta) return;
     ta.style.height = "auto";
-    ta.style.height = `${Math.min(ta.scrollHeight, 140)}px`;
+    ta.style.height = `${Math.min(ta.scrollHeight, 220)}px`;
   }, [prompt]);
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -67,13 +69,20 @@ export function Composer({
           value={prompt}
           onChange={(e) => onPromptChange(e.target.value)}
           onKeyDown={handleKeyDown}
-          rows={1}
+          rows={3}
           placeholder={t.composer.placeholder}
-          className="max-h-[140px] min-h-[30px] resize-none px-1 py-0.5 text-base font-medium leading-[1.55] text-text placeholder:text-text-mute"
+          className="max-h-[220px] min-h-[96px] resize-none px-1 py-0.5 text-base font-medium leading-[1.55] text-text placeholder:text-text-mute"
         />
 
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2.5">
-          <ModelSelect value={model} onChange={onModelChange} />
+          <div className="flex flex-wrap items-center gap-2.5">
+            <ModelSelect
+              value={model}
+              onChange={onModelChange}
+              hasApiKey={hasApiKey}
+            />
+            <ApiKeyDialog onKeyChange={setHasApiKey} />
+          </div>
 
           <button
             type="button"

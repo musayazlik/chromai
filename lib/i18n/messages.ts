@@ -28,6 +28,10 @@ export interface Messages {
     generate: string;
     generating: string;
     modelMenu: string;
+    freeModels: string;
+    premiumModels: string;
+    lockedModels: string;
+    addKeyToUse: string;
   };
   models: Record<string, string>;
   loader: (model: string) => string;
@@ -89,6 +93,10 @@ const tr: Messages = {
     generate: "Oluştur",
     generating: "Oluşturuluyor",
     modelMenu: "Yapay zekâ modeli",
+    freeModels: "Ücretsiz Modeller",
+    premiumModels: "Premium Modeller",
+    lockedModels: "API Key Gerekli",
+    addKeyToUse: "Kullanmak için API key ekle",
   },
   models: {
     balanced: "Dengeli ve hızlı",
@@ -101,6 +109,14 @@ const tr: Messages = {
     kimiGeneral: "Genel amaçlı",
     openSource: "Meta · açık kaynak",
     value: "Uygun maliyetli",
+    // Ücretsiz modeller
+    freeGoogle: "Google · ücretsiz",
+    freeOpenai: "OpenAI · ücretsiz",
+    freeMinimax: "MiniMax · ücretsiz",
+    freeDeepseek: "DeepSeek · ücretsiz",
+    freeXiaomi: "Xiaomi · ücretsiz",
+    // Premium modeller
+    xiaomi: "Xiaomi · gelişmiş",
   },
   loader: (model) => `${model} ile paletler oluşturuluyor`,
   results: {
@@ -254,6 +270,10 @@ const en: Messages = {
     generate: "Generate",
     generating: "Generating",
     modelMenu: "AI model",
+    freeModels: "Free Models",
+    premiumModels: "Premium Models",
+    lockedModels: "API Key Required",
+    addKeyToUse: "Add API key to use",
   },
   models: {
     balanced: "Balanced & fast",
@@ -266,6 +286,14 @@ const en: Messages = {
     kimiGeneral: "General purpose",
     openSource: "Meta · open source",
     value: "Cost-effective",
+    // Free models
+    freeGoogle: "Google · free",
+    freeOpenai: "OpenAI · free",
+    freeMinimax: "MiniMax · free",
+    freeDeepseek: "DeepSeek · free",
+    freeXiaomi: "Xiaomi · free",
+    // Premium models
+    xiaomi: "Xiaomi · advanced",
   },
   loader: (model) => `Generating palettes with ${model}`,
   results: {
@@ -419,6 +447,10 @@ const de: Messages = {
     generate: "Erstellen",
     generating: "Wird erstellt",
     modelMenu: "KI-Modell",
+    freeModels: "Kostenlose Modelle",
+    premiumModels: "Premium-Modelle",
+    lockedModels: "API-Schlüssel erforderlich",
+    addKeyToUse: "API-Schlüssel hinzufügen",
   },
   models: {
     balanced: "Ausgewogen & schnell",
@@ -431,6 +463,14 @@ const de: Messages = {
     kimiGeneral: "Kimi · multimodal",
     openSource: "Meta · Open Source",
     value: "Kostengünstig",
+    // Free models
+    freeGoogle: "Google · kostenlos",
+    freeOpenai: "OpenAI · kostenlos",
+    freeMinimax: "MiniMax · kostenlos",
+    freeDeepseek: "DeepSeek · kostenlos",
+    freeXiaomi: "Xiaomi · kostenlos",
+    // Premium models
+    xiaomi: "Xiaomi · erweitert",
   },
   loader: (model) => `Paletten werden mit ${model} erstellt`,
   results: {

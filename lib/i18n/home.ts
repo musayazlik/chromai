@@ -60,6 +60,10 @@ const tr: HomeMessages = {
         q: "Anahtarım olmadan çalışır mı?",
         a: "Evet. Anahtar yoksa Chromai, diline uygun yerel palet kütüphanesinden zarif örnekler gösterir.",
       },
+      {
+        q: "API anahtarım güvende mi?",
+        a: "Evet. API key'iniz tarayıcınızda şifrelenmiş olarak saklanır ve hiçbir sunucuya gönderilmez. Sadece OpenRouter API'ye doğrudan istek yapmak için kullanılır.",
+      },
     ],
   },
 };
@@ -101,6 +105,10 @@ const en: HomeMessages = {
         q: "Does it work without a key?",
         a: "Yes. Without a key, Chromai shows elegant samples from a local palette library in your language.",
       },
+      {
+        q: "Is my API key secure?",
+        a: "Yes. Your API key is stored encrypted in your browser and never sent to any server. It's only used for direct requests to the OpenRouter API.",
+      },
     ],
   },
 };
@@ -141,6 +149,10 @@ const de: HomeMessages = {
       {
         q: "Funktioniert es ohne Schlüssel?",
         a: "Ja. Ohne Schlüssel zeigt Chromai elegante Beispiele aus einer lokalen Palettenbibliothek in deiner Sprache.",
+      },
+      {
+        q: "Ist mein API-Schlüssel sicher?",
+        a: "Ja. Ihr API-Schlüssel wird verschlüsselt in Ihrem Browser gespeichert und niemals an einen Server gesendet. Er wird nur für direkte Anfragen an die OpenRouter API verwendet.",
       },
     ],
   },
