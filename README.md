@@ -87,6 +87,13 @@ OPENROUTER_API_KEY=sk-or-...
 
 # Optional: your site URL for OpenRouter rankings
 OPENROUTER_SITE_URL=https://chromai.app
+
+# Optional: client-side storage for the user's own OpenRouter key.
+# NEXT_PUBLIC_ values are inlined into the browser bundle and are NOT secret
+# (the XOR step is light obfuscation only). Keep them stable — changing them
+# invalidates keys already saved in users' browsers.
+NEXT_PUBLIC_API_KEY_STORAGE=chromai_or_key
+NEXT_PUBLIC_API_KEY_SECRET=ChR0m@1_S3cr3t_K3y_2026
 ```
 
 > 💡 If `OPENROUTER_API_KEY` is not set, the app won't crash — the request returns an error and the UI shows the local palette library.
