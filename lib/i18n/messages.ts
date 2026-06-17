@@ -109,13 +109,13 @@ const tr: Messages = {
     kimiGeneral: "Genel amaçlı",
     openSource: "Meta · açık kaynak",
     value: "Uygun maliyetli",
-    // Ücretsiz modeller
+    // Free models
     freeGoogle: "Google · ücretsiz",
     freeOpenai: "OpenAI · ücretsiz",
     freeMinimax: "MiniMax · ücretsiz",
     freeDeepseek: "DeepSeek · ücretsiz",
     freeXiaomi: "Xiaomi · ücretsiz",
-    // Premium modeller
+    // Premium models
     xiaomi: "Xiaomi · gelişmiş",
   },
   loader: (model) => `${model} ile paletler oluşturuluyor`,

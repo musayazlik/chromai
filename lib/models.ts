@@ -12,7 +12,7 @@ export interface AIModel {
   requiresKey: boolean;
 }
 
-// ── Ücretsiz Modeller (API Key gerekmez) ───────────────────────────────────
+// ── Free Models (no API key required) ──────────────────────────────────────
 export const FREE_MODELS: AIModel[] = [
   {
     id: "google/gemini-3.1-flash-lite",
@@ -56,7 +56,7 @@ export const FREE_MODELS: AIModel[] = [
   },
 ];
 
-// ── Ücretli Modeller (OpenRouter API Key gerekir) ───────────────────────────
+// ── Paid Models (OpenRouter API key required) ───────────────────────────────
 export const PAID_MODELS: AIModel[] = [
   {
     id: "minimax/minimax-m3",
@@ -108,7 +108,7 @@ export const PAID_MODELS: AIModel[] = [
   },
 ];
 
-// ── Tüm Modeller (Key varsa tümü, yoksa sadece ücretsizler) ─────────────────
+// ── All Models (all if key present, otherwise free only) ────────────────────
 export const MODELS: AIModel[] = [...FREE_MODELS, ...PAID_MODELS];
 
 export const DEFAULT_MODEL = FREE_MODELS[0];

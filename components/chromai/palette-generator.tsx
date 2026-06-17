@@ -104,7 +104,7 @@ export function PaletteGenerator() {
         shakeKey={shakeKey}
       />
 
-      {/* ── Son Oluşturulanlar ─────────────────────────────────────── */}
+      {/* ── Recently Generated ─────────────────────────────────────── */}
       {(busy || recentItems.length > 0) && (
         <section id="son-olusturulanlar" className="mt-[54px] scroll-mt-24">
           <div className="mb-[22px] flex items-baseline gap-3">
@@ -124,7 +124,7 @@ export function PaletteGenerator() {
         </section>
       )}
 
-      {/* ── Paletler (örnek / kütüphane) ──────────────────────────── */}
+      {/* ── Palettes (sample / library) ───────────────────────────── */}
       <section id="paletler" className="mt-[54px] scroll-mt-24">
         <div className="mb-[22px] flex items-baseline gap-3">
           <h2 className="font-display text-base font-semibold tracking-[-0.01em]">
