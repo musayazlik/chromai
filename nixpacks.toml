@@ -6,3 +6,6 @@ nixpkgs = ["nodejs_22"]
 
 [phases.build]
 cmds = ["pnpm exec prisma generate", "pnpm run build"]
+
+[phases.start]
+cmds = ["pnpm exec prisma migrate deploy", "pnpm run start"]
