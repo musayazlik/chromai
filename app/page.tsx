@@ -1,3 +1,4 @@
+import { BlogSection } from "@/components/blog/blog-section";
 import { Hero } from "@/components/chromai/hero";
 import { PaletteGenerator } from "@/components/chromai/palette-generator";
 import { Faq } from "@/components/chromai/faq";
@@ -11,6 +12,7 @@ export default function Home() {
     >
       <Hero />
       <PaletteGenerator />
+      <BlogSection />
       <Faq />
       <Founder />
     </div>

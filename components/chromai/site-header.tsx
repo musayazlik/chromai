@@ -20,6 +20,7 @@ export function SiteHeader() {
     { label: t.nav.palettes, href: "#paletler" },
     { label: t.nav.faq, href: "#sss" },
     { label: founder.eyebrow, href: "#kurucu" },
+    { label: t.nav.blog, href: "/blog" },
   ];
 
   return (

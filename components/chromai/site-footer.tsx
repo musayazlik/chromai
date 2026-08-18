@@ -41,6 +41,7 @@ export function SiteFooter() {
         { label: t.footer.linkCreate, href: "#composer" },
         { label: t.footer.linkPalettes, href: "#paletler" },
         { label: t.footer.linkModels, href: "#composer" },
+        { label: t.footer.linkBlog, href: "/blog" },
       ],
     },
     {

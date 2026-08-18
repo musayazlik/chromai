@@ -1,0 +1,36 @@
+// Chromai blog — Prisma schema (SQLite)
+//
+// One BlogPost row per (slug, locale). The same logical article can exist in
+// multiple locales; they share the slug. The webhook from n8n upserts posts.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String
+  locale      String
+  status      String   @default("DRAFT") // DRAFT | PUBLISHED
+  title       String
+  excerpt     String
+  content     String   // markdown
+  tags        String   @default("[]") // JSON-encoded string array
+  coverUrl    String?
+  coverAlt    String?
+  metaTitle   String?
+  metaDescription String?
+  readMinutes Int      @default(5)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  publishedAt DateTime?
+
+  @@unique([slug, locale])
+  @@index([status, publishedAt])
+  @@index([locale, publishedAt])
+}

@@ -8,6 +8,7 @@ export interface Messages {
     models: string;
     features: string;
     faq: string;
+    blog: string;
   };
   actions: {
     try: string;
@@ -59,6 +60,7 @@ export interface Messages {
     linkCreate: string;
     linkPalettes: string;
     linkModels: string;
+    linkBlog: string;
     rights: (year: number) => string;
     credit: string;
   };
@@ -72,6 +74,7 @@ const tr: Messages = {
     models: "Modeller",
     features: "Özellikler",
     faq: "SSS",
+    blog: "Blog",
   },
   actions: {
     try: "Hemen Dene",
@@ -147,6 +150,7 @@ const tr: Messages = {
     linkCreate: "Palet Oluştur",
     linkPalettes: "Paletler",
     linkModels: "AI Modelleri",
+    linkBlog: "Blog",
     rights: (year) => `© ${year} Chromai. Tüm hakları saklıdır.`,
     credit: "Codelify & Musa Yazlık tarafından yapıldı",
   },
@@ -249,6 +253,7 @@ const en: Messages = {
     models: "Models",
     features: "Features",
     faq: "FAQ",
+    blog: "Blog",
   },
   actions: {
     try: "Try Now",
@@ -324,6 +329,7 @@ const en: Messages = {
     linkCreate: "Create Palette",
     linkPalettes: "Palettes",
     linkModels: "AI Models",
+    linkBlog: "Blog",
     rights: (year) => `© ${year} Chromai. All rights reserved.`,
     credit: "Built by Codelify & Musa Yazlık",
   },
@@ -426,6 +432,7 @@ const de: Messages = {
     models: "Modelle",
     features: "Funktionen",
     faq: "FAQ",
+    blog: "Blog",
   },
   actions: {
     try: "Jetzt testen",
@@ -501,6 +508,7 @@ const de: Messages = {
     linkCreate: "Palette erstellen",
     linkPalettes: "Paletten",
     linkModels: "KI-Modelle",
+    linkBlog: "Blog",
     rights: (year) => `© ${year} Chromai. Alle Rechte vorbehalten.`,
     credit: "Erstellt von Codelify & Musa Yazlık",
   },
